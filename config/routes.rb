@@ -4,6 +4,8 @@ Solitweet::Application.routes.draw do
   resources :deputies
   resources :proposals
 
+  match "choix" => "pages#deputies", :as => :deputies
+  
   match "admin" => "pages#admin"
   
   # The priority is based upon order of creation:
