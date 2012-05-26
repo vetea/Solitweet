@@ -1,8 +1,11 @@
 Solitweet::Application.routes.draw do
+  root :to => 'pages#home'
+  
   resources :deputies
-
   resources :proposals
 
+  match "admin" => "pages#admin"
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

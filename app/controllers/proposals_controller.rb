@@ -1,4 +1,6 @@
 class ProposalsController < ApplicationController
+  before_filter :authenticate_http_admin
+  
   # GET /proposals
   # GET /proposals.json
   def index

@@ -1,4 +1,6 @@
 class DeputiesController < ApplicationController
+  before_filter :authenticate_http_admin
+  
   # GET /deputies
   # GET /deputies.json
   def index
