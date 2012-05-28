@@ -10,7 +10,7 @@ class PagesController < ApplicationController
     @twitter_message = Proposal.find(params[:proposal_id]).twitter_message
   end
 
-  def admin
+  def thanks
   end
 
 end

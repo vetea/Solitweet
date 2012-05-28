@@ -4,3 +4,6 @@
 
 $ ->
   $('.toolTip').tipsy()
+  $('.toolTip a').click (event) ->
+    <% url = Solitweet::Application.routes.url_helpers %>
+    window.location = "<%= url.thanks_path() %>/" + $(this).data("proposalId") + "/" + $(this).data("deputyId")
