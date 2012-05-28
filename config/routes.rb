@@ -4,7 +4,7 @@ Solitweet::Application.routes.draw do
   resources :deputies
   resources :proposals
 
-  match "choix" => "pages#deputies", :as => :deputies
+  match "choix/:proposal_id" => "pages#deputies", :as => :deputies
   
   match "admin" => "pages#admin"
   

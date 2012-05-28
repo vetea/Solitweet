@@ -1,38 +1,26 @@
-﻿<img id="fond" src="img/hemicycle.jpg" alt="background_picture"/>
+﻿<img id="fond" src="../img/hemicycle.jpg" alt="background_picture"/>
 <div id="conteneur">
 <div id="contenu">
   <h1>Assemblée Nationale Saison 2012</h1>
   <span id="header"><p><i>A quel député veux-tu envoyer ton message ?</i></p></span>
   <center>
   <table border="0">
-	<tr>
-		<td><span class="toolTip" title="This is a tooltip. :)"><img src="img/people.png" width="105px"></span></td>
-		<td><span class="toolTip" title="This is a tooltip. :)"><img src="img/people.png" width="105px"></span></td>
-		<td><span class="toolTip" title="This is a tooltip. :)"><img src="img/people.png" width="105px"></span></td>
-		<td><span class="toolTip" title="This is a tooltip. :)"><img src="img/people.png" width="105px"></span></td>
-		<td><span class="toolTip" title="This is a tooltip. :)"><img src="img/people.png" width="105px"></span></td>
-	</tr>
-	<tr>
-		<td><span class="toolTip" title="This is a tooltip. :)"><img src="img/people.png" width="105px"></span></td>
-		<td><span class="toolTip" title="This is a tooltip. :)"><img src="img/people.png" width="105px"></span></td>
-		<td><span class="toolTip" title="This is a tooltip. :)"><img src="img/people.png" width="105px"></span></td>
-		<td><span class="toolTip" title="This is a tooltip. :)"><img src="img/people.png" width="105px"></span></td>
-		<td><span class="toolTip" title="This is a tooltip. :)"><img src="img/people.png" width="105px"></span></td>
-	</tr>
-	<tr>
-		<td><span class="toolTip" title="This is a tooltip. :)"><img src="img/people.png" width="105px"></span></td>
-		<td><span class="toolTip" title="This is a tooltip. :)"><img src="img/people.png" width="105px"></span></td>
-		<td><span class="toolTip" title="This is a tooltip. :)"><img src="img/people.png" width="105px"></span></td>
-		<td><span class="toolTip" title="This is a tooltip. :)"><img src="img/people.png" width="105px"></span></td>
-		<td><span class="toolTip" title="This is a tooltip. :)"><img src="img/people.png" width="105px"></span></td>
-	</tr>
-	<tr>
-		<td><span class="toolTip" title="This is a tooltip. :)"><img src="img/people.png" width="105px"></span></td>
-		<td><span class="toolTip" title="This is a tooltip. :)"><img src="img/people.png" width="105px"></span></td>
-		<td><span class="toolTip" title="This is a tooltip. :)"><img src="img/people.png" width="105px"></span></td>
-		<td><span class="toolTip" title="This is a tooltip. :)"><img src="img/people.png" width="105px"></span></td>
-		<td><span class="toolTip" title="This is a tooltip. :)"><img src="img/people.png" width="105px"></span></td>
-	</tr>
+  <% @deputies.sort{|a,b| rand(2) <=> rand(2)}.each_with_index do |deputy, index| %>
+    <% if index % 5 == 0 %>
+      <tr>
+    <% end %>
+      <td>
+        <span class="toolTip" title="<%= "#{deputy.political_party} - #{deputy.firstname} #{deputy.surname}" %>">
+          <% sharing_url = "https://twitter.com/share?text=@#{deputy.twitter_username} #{@twitter_message}" %>
+          <%= link_to sharing_url, :target => "_blank" do %>
+            <img src="<%= deputy.photo_url %>" width="105px">
+          <% end %>
+        </span>
+      </td>
+    <% if index % 5 == 4 %>
+      </tr>
+    <% end %>
+  <% end %>  
   </table>
   <center>
   <p id="ref">

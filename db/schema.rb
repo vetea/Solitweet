@@ -11,25 +11,27 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120526152822) do
+ActiveRecord::Schema.define(:version => 20120528155001) do
 
   create_table "deputies", :force => true do |t|
-    t.string   "firstname"
-    t.string   "surname"
-    t.string   "description"
-    t.string   "photo_url"
-    t.string   "twitter_username"
-    t.string   "political_party"
-    t.integer  "number_of_twitter_followers"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string    "firstname"
+    t.string    "surname"
+    t.string    "description"
+    t.string    "photo_url"
+    t.string    "twitter_username"
+    t.string    "political_party"
+    t.integer   "number_of_twitter_followers"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   create_table "proposals", :force => true do |t|
-    t.string   "title"
-    t.text     "content"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string    "title"
+    t.text      "content"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.string    "photo_url"
+    t.string    "twitter_message"
   end
 
 end
