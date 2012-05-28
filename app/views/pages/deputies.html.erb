@@ -11,7 +11,7 @@
     <% end %>
       <td>
         <span class="toolTip" title="<%= "#{deputy.political_party} - #{deputy.firstname} #{deputy.surname}" %>">
-          <% sharing_url = "https://twitter.com/share?text=@#{deputy.twitter_username} #{@twitter_message}" %>
+          <% sharing_url = "https://twitter.com/share?text=@#{deputy.twitter_username} #{@twitter_message}&hashtags=legislatives&url=http://solitweet.makesense.org" %>
           <%= link_to sharing_url, :target => "_blank", :data => { :deputy_id => deputy.id, :proposal_id => params[:proposal_id] } do %>
             <img src="<%= deputy.photo_url %>" width="105px">
           <% end %>
