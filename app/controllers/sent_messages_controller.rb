@@ -1,4 +1,6 @@
 class SentMessagesController < ApplicationController
+  before_filter :authenticate_http_admin
+  
   # GET /sent_messages
   # GET /sent_messages.json
   def index
