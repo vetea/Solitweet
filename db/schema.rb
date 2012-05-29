@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120528155001) do
+ActiveRecord::Schema.define(:version => 20120528234052) do
 
   create_table "deputies", :force => true do |t|
     t.string    "firstname"
@@ -33,5 +33,16 @@ ActiveRecord::Schema.define(:version => 20120528155001) do
     t.string    "photo_url"
     t.string    "twitter_message"
   end
+
+  create_table "sent_messages", :force => true do |t|
+    t.integer  "deputy_id"
+    t.integer  "proposal_id"
+    t.integer  "count",       :default => 0, :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "sent_messages", ["deputy_id"], :name => "index_sent_messages_on_deputy_id"
+  add_index "sent_messages", ["proposal_id"], :name => "index_sent_messages_on_proposal_id"
 
 end

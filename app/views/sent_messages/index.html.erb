@@ -1,0 +1,27 @@
+<h1>Listing sent_messages</h1>
+
+<table>
+  <tr>
+    <th>Deputy</th>
+    <th>Proposal</th>
+    <th>Count</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @sent_messages.each do |sent_message| %>
+  <tr>
+    <td><%= link_to "#{sent_message.deputy.firstname} #{sent_message.deputy.surname}", deputy_path(sent_message.deputy.id) %></td>
+    <td><%= link_to sent_message.proposal.title, sent_message.proposal %></td>
+    <td><%= sent_message.count %></td>
+    <td><%= link_to 'Show', sent_message %></td>
+    <td><%= link_to 'Edit', edit_sent_message_path(sent_message) %></td>
+    <td><%= link_to 'Destroy', sent_message, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Sent message', new_sent_message_path %>

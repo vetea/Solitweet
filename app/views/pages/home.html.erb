@@ -7,7 +7,7 @@
   <% @proposals.each do |proposal| %>
     <tr>  
       <td>
-        <a href="<%= deputies_path(proposal.id) %>">
+        <a href="<%= choice_path(proposal.id) %>">
           <p><strong><%= proposal.title %></strong> - <%= proposal.content %></p>
         </a>
       </td>

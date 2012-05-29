@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Deputy:</b>
+  <%= @sent_message.deputy %>
+</p>
+
+<p>
+  <b>Proposal:</b>
+  <%= @sent_message.proposal %>
+</p>
+
+<p>
+  <b>Count:</b>
+  <%= @sent_message.count %>
+</p>
+
+
+<%= link_to 'Edit', edit_sent_message_path(@sent_message) %> |
+<%= link_to 'Back', sent_messages_path %>
