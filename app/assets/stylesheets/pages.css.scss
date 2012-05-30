@@ -2,11 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body {
+body.pages {
   background-image:url(../img/hemicycle.jpg);
   background-repeat: no-repeat;
   background-position: 50% 0;
   background-color: grey;
+}
+
+body.admin {
+  background-image:none;
+  background-color: white;
 }
 
 .home {
