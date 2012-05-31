@@ -3,6 +3,7 @@
 <table>
   <tr>
     <th>Deputy</th>
+    <th>Influencer</th>
     <th>Proposal</th>
     <th>Count</th>
     <th></th>
@@ -12,7 +13,8 @@
 
 <% @sent_messages.each do |sent_message| %>
   <tr>
-    <td><%= link_to "#{sent_message.deputy.firstname} #{sent_message.deputy.surname}", deputy_path(sent_message.deputy.id) %></td>
+    <td><%= link_to "#{sent_message.deputy.firstname} #{sent_message.deputy.surname}", deputy_path(sent_message.deputy.id) if sent_message.deputy %></td>
+    <td><%= link_to "#{sent_message.influencer.firstname} #{sent_message.influencer.surname}", influencer_path(sent_message.influencer.id) if sent_message.influencer %></td>
     <td><%= link_to sent_message.proposal.title, sent_message.proposal %></td>
     <td><%= sent_message.count %></td>
     <td><%= link_to 'Show', sent_message %></td>

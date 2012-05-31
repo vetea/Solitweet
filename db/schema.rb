@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120528234052) do
+ActiveRecord::Schema.define(:version => 20120531044632) do
 
   create_table "deputies", :force => true do |t|
     t.string    "firstname"
@@ -23,6 +23,15 @@ ActiveRecord::Schema.define(:version => 20120528234052) do
     t.integer   "number_of_twitter_followers"
     t.timestamp "created_at"
     t.timestamp "updated_at"
+  end
+
+  create_table "influencers", :force => true do |t|
+    t.string   "firstname"
+    t.string   "surname"
+    t.string   "photo_url"
+    t.string   "twitter_username"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "proposals", :force => true do |t|
@@ -37,12 +46,14 @@ ActiveRecord::Schema.define(:version => 20120528234052) do
   create_table "sent_messages", :force => true do |t|
     t.integer  "deputy_id"
     t.integer  "proposal_id"
-    t.integer  "count",       :default => 0, :null => false
+    t.integer  "count",         :default => 0, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "influencer_id"
   end
 
   add_index "sent_messages", ["deputy_id"], :name => "index_sent_messages_on_deputy_id"
+  add_index "sent_messages", ["influencer_id"], :name => "index_sent_messages_on_influencer_id"
   add_index "sent_messages", ["proposal_id"], :name => "index_sent_messages_on_proposal_id"
 
 end

@@ -1,0 +1,8 @@
+<div id="influencers"></div>
+
+<script type="text/javascript">
+  $(function() {
+    window.router = new Solitweet.Routers.InfluencersRouter({influencers: <%= @influencers.to_json(:methods => :number_of_sent_messages).html_safe -%>});
+    Backbone.history.start();
+  });
+</script>

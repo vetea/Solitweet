@@ -2,8 +2,11 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
+<% url = Solitweet::Application.routes.url_helpers %>
+  
 $ ->
   $('.toolTip').tipsy()
-  $('.toolTip a').click (event) ->
-    <% url = Solitweet::Application.routes.url_helpers %>
-    window.location = "<%= url.thanks_path() %>/" + $(this).data("proposalId") + "/" + $(this).data("deputyId")
+  $('.toolTip.deputies a').click (event) ->
+    window.location = "<%= url.thanks_path() %>/" + $(this).data("proposalId") + "/politicien/" + $(this).data("deputyId")
+  $('.toolTip.influencers a').click (event) ->
+    window.location = "<%= url.thanks_path() %>/" + $(this).data("proposalId") + "/influenceur/" + $(this).data("influencerId")
