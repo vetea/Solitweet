@@ -14,6 +14,10 @@ body.admin {
   background-color: white;
 }
 
+body a:hover {
+  background: none;
+}
+
 .home {
   margin: 0;
   padding: 0;
@@ -113,7 +117,7 @@ body.admin {
   }
 }
 
-.deputies, .thanks, .sense_hackers {
+.deputies, .thanks, .sense_hackers, .about {
   margin: 0;
   padding: 0;
   height: 100%;
@@ -208,6 +212,10 @@ body.admin {
   .list {
     margin: 40px;
   }
+}
+
+.about img {
+  float: right;
 }
 
 .share {
