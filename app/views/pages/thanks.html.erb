@@ -27,7 +27,7 @@
               <% end %>
               <td>
                 <span class="toolTip influencers" title="<%= "#{influencer.firstname} #{influencer.surname}" %>">
-                  <% sharing_url = "https://twitter.com/share?text=@#{influencer.twitter_username} #{@twitter_message}&hashtags=legislatives&url=http://sensetweet.makesense.org" %>
+                  <% sharing_url = "https://twitter.com/share?text=@#{influencer.twitter_username} #{@twitter_message}&via=mouves_ES&related=makesensetwitts&hashtags=sensetwitt,socent&url=http://sensetwitt.it" %>
                   <%= link_to sharing_url, :target => "_blank", :data => { :influencer_id => influencer.id, :proposal_id => params[:proposal_id] } do %>
                     <img src="<%= influencer.photo_url %>" width="80px">
                   <% end %>

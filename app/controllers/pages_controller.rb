@@ -13,8 +13,10 @@ class PagesController < ApplicationController
   end
 
   def thanks
+    require 'uri'
+    
     @influencers = Influencer.all
-    @twitter_message = Proposal.find(params[:proposal_id]).twitter_message
+    @twitter_message = URI.escape Proposal.find(params[:proposal_id]).twitter_message
 
     if params[:type] == "politicien"
       sent_message = SentMessage.find_or_create_by_deputy_id_and_proposal_id :deputy_id => params[:person_id], :proposal_id => params[:proposal_id]
