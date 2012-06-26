@@ -6,8 +6,10 @@ class PagesController < ApplicationController
   end
 
   def deputies
+    require 'uri'
+
     @deputies = Deputy.all
-    @twitter_message = Proposal.find(params[:proposal_id]).twitter_message
+    @twitter_message = URI.escape Proposal.find(params[:proposal_id]).twitter_message
   end
 
   def thanks
