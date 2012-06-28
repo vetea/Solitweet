@@ -1,7 +1,10 @@
 ﻿<div id="conteneur">
 <div id="contenu">
-  <h1>Assemblée Nationale Saison 2012</h1>
-  <span id="header"><p><i>Quel message veux-tu envoyer à ton député ?</i></p></span>
+  <h1>
+    Avec SenseTwitt, soutiens les mesures du mouvement de entrepreneurs sociaux 
+    (<a href="http://www.mouves.org/" target="_blank">Mouves</a>)!
+  </h1>
+  <div id="header"><p><i>Laquelle des mesures suivante veux-tu soutenir ?</i></p></div>
   <table border="0">
   <% @proposals.each do |proposal| %>
     <tr>  
@@ -14,6 +17,12 @@
     </tr>
   <% end %>
   </table>  
+  <div class="details">
+    Découvrez toutes les propositions en detail dans le 
+    <a id="pdf-mouves" target="_blank" href="http://www.mouves.org/src/doc/communication/productions/Pacte_pour_entreprendre_autrement_Mouves_2012.pdf">
+      Pacte pour entreprendre autrement du Mouves.
+    </a>
+  </div>
   <%= render 'shared/ref' %>
 </div>
  </div>

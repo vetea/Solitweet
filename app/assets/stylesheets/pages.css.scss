@@ -135,6 +135,7 @@ body a:hover {
       -moz-opacity: 1;
       opacity: 1;
       -khtml-opacity: 1;
+
   }
 
   #conteneur table {
@@ -220,4 +221,24 @@ body a:hover {
 
 .share {
   margin: 40px;
+}
+
+#conteneur .details {
+  margin: 0 0 70px 20px;
+
+  a#pdf-mouves {
+    text-decoration: underline;
+  }
+}
+
+.about #conteneur #contenu, .sense_hackers #conteneur #contenu {
+  a {
+    text-decoration: underline;
+  }
+}
+
+h1 {
+  font-size: 23px;
+  line-height: 34px;
+  margin: 20px;
 }

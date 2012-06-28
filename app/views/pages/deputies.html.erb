@@ -1,6 +1,9 @@
 ﻿<div id="conteneur">
 <div id="contenu">
-  <h1>Assemblée Nationale Saison 2012</h1>
+  <h1>
+    Avec SenseTwitt, soutiens les mesures du mouvement de entrepreneurs sociaux 
+    (<a href="http://www.mouves.org/" target="_blank">Mouves</a>)!
+  </h1>
   <span id="header"><p><i>A quel député veux-tu envoyer ton message ?</i></p></span>
   <center>
   <table border="0">
@@ -10,7 +13,7 @@
     <% end %>
       <td>
         <span class="toolTip deputies" title="<%= "#{deputy.political_party} - #{deputy.firstname} #{deputy.surname}" %>">
-          <% sharing_url = "https://twitter.com/share?text=@#{deputy.twitter_username} #{@twitter_message}&via=mouves_ES&related=makesensetwitts&hashtags=sensetwitt,socent&url=http://sensetwitt.it" %>
+          <% sharing_url = "https://twitter.com/share?text=@#{deputy.twitter_username} #{@twitter_message}&via=mouves_ES&related=makesensetwitts&hashtags=socent&url=http://sensetwitt.it" %>
           <%= link_to sharing_url, :target => "_blank", :data => { :deputy_id => deputy.id, :proposal_id => params[:proposal_id] } do %>
             <img src="<%= deputy.photo_url %>" width="105px">
           <% end %>
