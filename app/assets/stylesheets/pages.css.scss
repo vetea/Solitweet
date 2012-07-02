@@ -242,3 +242,12 @@ h1 {
   line-height: 34px;
   margin: 20px;
 }
+
+.people {
+  overflow: auto;
+}
+
+.people div.influencers {
+  float: left;
+  margin: 2px;
+}
