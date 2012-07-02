@@ -1,9 +1,6 @@
 ﻿<div id="conteneur">
 <div id="contenu">
-  <h1>
-    Avec SenseTwitt, soutiens les mesures du mouvement de entrepreneurs sociaux 
-    (<a href="http://www.mouves.org/" target="_blank">Mouves</a>)!
-  </h1>
+  <h1><%= title %></h1>
   <span id="header"><p><i>Merci de promouvoir les entrepreneurs sociaux auprès de l'Assemblée Nationale !</i></p></span>
 
   <div class="share">
@@ -30,7 +27,7 @@
               <% end %>
               <td>
                 <span class="toolTip influencers" title="<%= "#{influencer.firstname} #{influencer.surname}" %>">
-                  <% sharing_url = "https://twitter.com/share?text=@#{influencer.twitter_username} #{@twitter_message}&via=mouves_ES&related=makesensetwitts&hashtags=sensetwitt,socent&url=http://sensetwitt.it" %>
+                  <% sharing_url = "https://twitter.com/share?text=@#{influencer.twitter_username} #{@twitter_message} @mouves_ES&related=makesensetwitts&hashtags=socent&url=http://sensetwitt.it" %>
                   <%= link_to sharing_url, :target => "_blank", :data => { :influencer_id => influencer.id, :proposal_id => params[:proposal_id] } do %>
                     <img src="<%= influencer.photo_url %>" width="80px">
                   <% end %>
