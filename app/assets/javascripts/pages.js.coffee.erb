@@ -7,6 +7,10 @@
 $ ->
   $('.toolTip').tipsy()
   $('.toolTip.deputies a').click (event) ->
-    window.location = "<%= url.thanks_path() %>/" + $(this).data("proposalId") + "/politicien/" + $(this).data("deputyId")
+    setTimeout( # for safari
+      => window.location = "<%= url.thanks_path() %>/" + $(this).data("proposalId") + "/politicien/" + $(this).data("deputyId"),
+      100)
   $('.toolTip.influencers a').click (event) ->
-    window.location = "<%= url.thanks_path() %>/" + $(this).data("proposalId") + "/influenceur/" + $(this).data("influencerId")
+    setTimeout( # for safari
+      => window.location = "<%= url.thanks_path() %>/" + $(this).data("proposalId") + "/influenceur/" + $(this).data("influencerId")
+      100)
