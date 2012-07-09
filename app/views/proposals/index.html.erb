@@ -1,8 +1,0 @@
-<div id="proposals"></div>
-
-<script type="text/javascript">
-  $(function() {
-    window.router = new Solitweet.Routers.ProposalsRouter({proposals: <%= @proposals.to_json.html_safe -%>});
-    Backbone.history.start();
-  });
-</script>

@@ -1,25 +1,96 @@
 ﻿<div id="conteneur">
 <div id="contenu">
-  <h1><%= title %></h1>
-  <div id="header"><p><i>Laquelle des mesures suivante veux-tu soutenir ?</i></p></div>
-  <table border="0">
-  <% @proposals.each do |proposal| %>
-    <tr>  
-      <td>
-        <a href="<%= choice_path(proposal.id) %>">
-          <p><strong><%= proposal.title %></strong> - <%= proposal.content %></p>
-        </a>
-      </td>
-      <td><img src="<%= proposal.photo_url %>" width="90px"></img></td>
-    </tr>
-  <% end %>
-  </table>  
-  <div class="details">
-    Découvrez toutes les propositions en détail dans le 
-    <a id="pdf-mouves" target="_blank" href="http://mouves.org/pg/pages/view/3800/">
-      Pacte pour entreprendre autrement du Mouves.
+  <h1>
+    Soutiens les mesures du mouvement de entrepreneurs sociaux 
+    (<a href="http://www.mouves.org/" target="_blank">Mouves</a>)!
+  </h1>
+  <span id="header">
+    <p>
+      <i>SenseTwitt avait été développé pendant un HackSense organisé par 
+      <%= link_to "MakeSense", "http://makesense.org" %>
+      </i>
+    </p>
+  </span>
+
+  <div class="list">
+    <a href="http://www.mouves.org/">
+      <img src="/img/mouves.jpg" alt="Logo du Mouves" />
     </a>
+
+    <h4>Quoi ?</h4>
+    <p>
+      <a href="http://www.mouves.org/" target="_blank">
+      Le Mouves
+      </a>, 
+      à la pointe de l'innovation, avait choisi un format d’interpellation 
+      politique inédit sous la forme d’un « SenseTwitt » le 3 juillet 2012, 
+      jour de la rentrée parlementaire.
+    </p>
+
+    <h4>Comment ?</h4>
+    <p>
+      Le « SenseTwitt » était une application web très simple qui 
+      permettait à ses utilisateurs d’envoyer des messages Twitter 
+      de 140 caractères pré-formatés à des destinataires influents 
+      choisis pour relayer et soutenir une cause.  Développée par 
+      la communauté 
+      <a href="http://www.makesense.org/" target="_blank">MakeSense</a> 
+      lors d'un atelier 
+      <a href="http://we.makesense.org/?cat=114" target="_blank">HackSense,</a> 
+      cette opération s’appuyait sur un site internet dédié : www.sensetwitt.it - 
+      En deux clicks, Les membres du Mouves et sympathisants de l’Entrepreneuriat 
+      social pouvaient ainsi facilement twitter à leurs député(é)s les propositions 
+      formulées dans le livre blanc du Mouves pour les 
+      encourager à les promouvoir lors de la nouvelle mandature.
+    </p>
+    
+    <h4>Pourquoi ?</h4>
+    <p>
+      <a href="http://www.mouves.org/" target="_blank">Le Mouves</a> 
+      veut faire en sorte que les député(e)s fraîchement élu(e)s 
+      s’emparent de la thématique de l’entrepreneuriat social et 
+      des solutions existantes pour développer ce secteur. Alors 
+      que nous traversons une crise sans précédent, l’entrepreneuriat 
+      social innove et répond aux besoins sociaux de nos concitoyens 
+      en plaçant leur efficacité économique au service de l’intérêt général. 
+      Mais cette autre manière d’entreprendre n’est pas encore assez développée 
+      dans notre pays. Le Mouves a identifié des mesures pour y remédier 
+      dans son Livre Blanc des Entrepreneurs Sociaux. La mandature qui 
+      s’ouvre doit permettre le changement d’échelle de ce secteur en reprenant ces propositions.
+    </p>
+
+    <h4>Merci aux hackers de sens d'avoir participé !</h4>
+
+    <ul>
+      <li>
+      <%= link_to "Larry Vetea Tchiou", "http://twitter.com/vetea", :target => "_blank" %> 
+        : Co-backpacker @MakeSense.org, Co-founder @CommonsSense - about #socent, #tech, #design, #biz, #innov, #makesense
+      </li>    
+      <li>
+      <%= link_to "Sébastien Bourdu", "http://www.sebastienbourdu.com", :target => "_blank" %> est un web développeur et UX designer en freelance. 
+        Il est cofondateur et directeur technique de <%= link_to "Leeftr", "http://www.leeftr.com", :target => "_blank" %>. 
+        Il s'occupe également de l'UX design de <%= link_to "MakeSense", "http://makesense.org", :target => "_blank" %>.
+        <%= link_to "Son portfolio est ici => http://www.sebastienbourdu.com", "http://www.sebastienbourdu.com", :target => "_blank"  %>
+      </li>    
+      <li>
+        <a href="http://about.me/romidea" target="_blank">Romain Chanut</a> 
+        est Gangster @ MakeSense, 
+        Hacktiviste en lutte contre la fracture numérique @ Jerry, 
+        et passionné par l'impact des nouvelles technologies sur 
+        nos façons d'intéragir et de communiquer => <a href="http://about.me/romidea" target="_blank">http://about.me/romidea</a>
+      </li>
+      <li>
+        <%= link_to "Emilien Ah-Kiem", "http://twitter.com/Em_hack", :target => "_blank" %> est Gangster @MakeSense, 
+        maker <%= link_to "@Jerry", "http://twitter.com/jerrydiy", :target => "_blank" %>
+        padawan entrepreneur du coté social de la force.
+      </li>
+      <li>Philippe Rémy</li>
+    </ul>
+
+    <p>
+      Le code de ce site Internet est open-source et peut-être trouvé sur Github <%= link_to "ici : https://github.com/ekkans/Solitweet", "https://github.com/ekkans/Solitweet" %>
+    </p>
   </div>
-  <%= render 'shared/ref' %>
+
 </div>
  </div>

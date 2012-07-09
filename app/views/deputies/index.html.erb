@@ -1,8 +1,0 @@
-<div id="deputies"></div>
-
-<script type="text/javascript">
-  $(function() {
-    window.router = new Solitweet.Routers.DeputiesRouter({deputies: <%= @deputies.to_json(:methods => :number_of_sent_messages).html_safe -%>});
-    Backbone.history.start();
-  });
-</script>
